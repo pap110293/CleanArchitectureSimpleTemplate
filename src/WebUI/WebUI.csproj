@@ -1,0 +1,177 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>DotNetCore.WebUI</RootNamespace>
+    <AssemblyName>DotNetCore.WebUI</AssemblyName>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>true</IsPackable>
+    <!--<IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>-->
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NSwag.AspNetCore" Version="13.3.0" />
+    <PackageReference Include="NSwag.MSBuild" Version="13.3.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+    <Content Remove="wwwroot\dist\img\icons\android-chrome-512x512.png" />
+    <None Include="wwwroot\img\icons\android-chrome-512x512.png" />
+    <Content Remove="wwwroot\dist\img\icons\android-chrome-maskable-192x192.png" />
+    <None Include="wwwroot\img\icons\android-chrome-maskable-192x192.png" />
+    <Content Remove="wwwroot\dist\img\icons\android-chrome-maskable-512x512.png" />
+    <None Include="wwwroot\img\icons\android-chrome-maskable-512x512.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon-120x120.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-120x120.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon-152x152.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-152x152.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon-180x180.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-180x180.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon-60x60.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-60x60.png" />
+    <Content Remove="wwwroot\dist\img\icons\apple-touch-icon-76x76.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-76x76.png" />
+    <Content Remove="wwwroot\dist\img\icons\favicon-16x16.png" />
+    <None Include="wwwroot\img\icons\favicon-16x16.png" />
+    <Content Remove="wwwroot\dist\img\icons\favicon-32x32.png" />
+    <None Include="wwwroot\img\icons\favicon-32x32.png" />
+    <Content Remove="wwwroot\dist\img\icons\msapplication-icon-144x144.png" />
+    <None Include="wwwroot\img\icons\msapplication-icon-144x144.png" />
+    <Content Remove="wwwroot\dist\img\icons\mstile-150x150.png" />
+    <None Include="wwwroot\img\icons\mstile-150x150.png" />
+    <Content Remove="wwwroot\dist\img\icons\safari-pinned-tab.svg" />
+    <None Include="wwwroot\img\icons\safari-pinned-tab.svg" />
+    <Content Remove="wwwroot\dist\img\logo.82b9c7a5.png" />
+    <None Include="wwwroot\img\logo.82b9c7a5.png" />
+    <Content Remove="wwwroot\dist\js\app.65e49af2.js" />
+    <None Include="wwwroot\js\app.65e49af2.js" />
+    <Content Remove="wwwroot\dist\js\app.65e49af2.js.map" />
+    <None Include="wwwroot\js\app.65e49af2.js.map" />
+    <Content Remove="wwwroot\dist\js\chunk-vendors.1fcdfd2c.js" />
+    <None Include="wwwroot\js\chunk-vendors.1fcdfd2c.js" />
+    <Content Remove="wwwroot\dist\js\chunk-vendors.1fcdfd2c.js.map" />
+    <None Include="wwwroot\js\chunk-vendors.1fcdfd2c.js.map" />
+    <Content Remove="wwwroot\css\app.f18657ad.css" />
+    <None Include="wwwroot\css\app.f18657ad.css" />
+    <Content Remove="wwwroot\img\icons\android-chrome-192x192.png" />
+    <None Include="wwwroot\img\icons\android-chrome-192x192.png" />
+    <Content Remove="wwwroot\img\icons\android-chrome-512x512.png" />
+    <None Include="wwwroot\img\icons\android-chrome-512x512.png" />
+    <Content Remove="wwwroot\img\icons\android-chrome-maskable-192x192.png" />
+    <None Include="wwwroot\img\icons\android-chrome-maskable-192x192.png" />
+    <Content Remove="wwwroot\img\icons\android-chrome-maskable-512x512.png" />
+    <None Include="wwwroot\img\icons\android-chrome-maskable-512x512.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon-120x120.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-120x120.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon-152x152.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-152x152.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon-180x180.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-180x180.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon-60x60.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-60x60.png" />
+    <Content Remove="wwwroot\img\icons\apple-touch-icon-76x76.png" />
+    <None Include="wwwroot\img\icons\apple-touch-icon-76x76.png" />
+    <Content Remove="wwwroot\img\icons\favicon-16x16.png" />
+    <None Include="wwwroot\img\icons\favicon-16x16.png" />
+    <Content Remove="wwwroot\img\icons\favicon-32x32.png" />
+    <None Include="wwwroot\img\icons\favicon-32x32.png" />
+    <Content Remove="wwwroot\img\icons\msapplication-icon-144x144.png" />
+    <None Include="wwwroot\img\icons\msapplication-icon-144x144.png" />
+    <Content Remove="wwwroot\img\icons\mstile-150x150.png" />
+    <None Include="wwwroot\img\icons\mstile-150x150.png" />
+    <Content Remove="wwwroot\img\icons\safari-pinned-tab.svg" />
+    <None Include="wwwroot\img\icons\safari-pinned-tab.svg" />
+    <Content Remove="wwwroot\img\logo.82b9c7a5.png" />
+    <None Include="wwwroot\img\logo.82b9c7a5.png" />
+    <Content Remove="wwwroot\js\about.b2c06703.js" />
+    <None Include="wwwroot\js\about.b2c06703.js" />
+    <Content Remove="wwwroot\js\about.b2c06703.js.map" />
+    <None Include="wwwroot\js\about.b2c06703.js.map" />
+    <Content Remove="wwwroot\js\app.65e49af2.js" />
+    <None Include="wwwroot\js\app.65e49af2.js" />
+    <Content Remove="wwwroot\js\app.65e49af2.js.map" />
+    <None Include="wwwroot\js\app.65e49af2.js.map" />
+    <Content Remove="wwwroot\js\chunk-vendors.1fcdfd2c.js" />
+    <None Include="wwwroot\js\chunk-vendors.1fcdfd2c.js" />
+    <Content Remove="wwwroot\js\chunk-vendors.1fcdfd2c.js.map" />
+    <None Include="wwwroot\js\chunk-vendors.1fcdfd2c.js.map" />
+    <Content Remove="wwwroot\favicon.ico" />
+    <None Include="wwwroot\favicon.ico" />
+    <Content Remove="wwwroot\index.html" />
+    <None Include="wwwroot\index.html" />
+    <Content Remove="wwwroot\manifest.json" />
+    <None Include="wwwroot\manifest.json" />
+    <Content Remove="wwwroot\precache-manifest.51b5784cf154d995563e2bdd1fc0952e.js" />
+    <None Include="wwwroot\precache-manifest.51b5784cf154d995563e2bdd1fc0952e.js" />
+    <Content Remove="wwwroot\robots.txt" />
+    <None Include="wwwroot\robots.txt" />
+    <Content Remove="wwwroot\service-worker.js" />
+    <None Include="wwwroot\service-worker.js" />
+    <Content Remove="wwwroot\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj" />
+  </ItemGroup>
+
+  <Target Name="NSwag" AfterTargets="Build" Condition="'$(Configuration)' == 'Debug'">
+    <Copy SourceFiles="@(Reference)" DestinationFolder="$(OutDir)References" />
+    <Exec Command="$(NSwagExe_Core31) run /variables:Configuration=$(Configuration)" />
+    <RemoveDir Directories="$(OutDir)References" />
+  </Target>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles-&gt;'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>
